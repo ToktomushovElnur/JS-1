@@ -8,4 +8,13 @@ for (var i = 0; i < tags.length; i++) {
         tagCount[tag] = 1
     }
 }
-console.log(tagCount)
+var tagCountArray = Object.entries(tagCount)
+tagCountArray.sort(function(a, b) {
+    return b[1] - a[1]
+})
+var sortedTagCount = {}
+tagCountArray.forEach(function(entry) {
+    sortedTagCount[entry[0]] = entry[1]
+})
+
+console.log(sortedTagCount)
